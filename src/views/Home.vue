@@ -21,7 +21,8 @@
       </a-layout-header>
       <a-layout>
         <a-layout-sider width="150px">
-          <a-menu :mode="'inline'"
+          <a-menu theme="dark"
+                  :mode="'inline'"
                   :open-keys="openKeys"
                   :selectedKeys="[selectedKeys]"
                   @openChange="onOpenChange">
@@ -30,7 +31,8 @@
                 <codepen-outlined style="font-size: 18px"/>
                 <span>{{ item.menuName }}</span>
               </template>
-              <a-menu-item v-for="item2 in item.children" :key="'/'+item2.menuRoute" @click="activeKey('/'+item2.menuRoute)">
+              <a-menu-item v-for="item2 in item.children" :key="'/'+item2.menuRoute"
+                           @click="activeKey('/'+item2.menuRoute)">
                 <span> {{ item2.menuName }}</span>
               </a-menu-item>
             </a-sub-menu>
@@ -71,7 +73,7 @@ export default {
     this.menuList = menuList
     this.selectedKeys = window.sessionStorage.getItem('selectedKeys');
     let item = window.sessionStorage.getItem('openKeys');
-    this.openKeys = item ? [parseInt(item)] : [] ;
+    this.openKeys = item ? [parseInt(item)] : [];
   },
   methods: {
     dropdownChange(value) {
@@ -119,7 +121,8 @@ export default {
 }
 
 .ant-layout-header {
-  background: #303741;
+  background: #001529;
+  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   color: #fff;
