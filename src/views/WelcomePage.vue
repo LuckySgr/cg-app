@@ -12,8 +12,9 @@
 <script setup>
 
 import {message} from 'ant-design-vue';
-import router from '../router'
+import {useRouter} from "vue-router";
 
+const router = useRouter();
 const startContainer = () => {
   window.sessionStorage.setItem('startActivation', 'goHome')
   message.success('Welcome To Computer Graphics ApplicationFramework')
